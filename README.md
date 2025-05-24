@@ -1,5 +1,5 @@
 
-# Sistema Bancário - Banco de Dados
+# 💰 Sistema Bancário - Banco de Dados
 
 Este projeto implementa um sistema bancário simples utilizando MySQL para gerenciamento de dados.
 
@@ -31,7 +31,7 @@ O sistema é composto pelas seguintes tabelas:
 
 ---
 
-# Banking System - Database
+# 💰 Banking System - Database
 
 This project implements a simple banking system using MySQL to manage data.
 
