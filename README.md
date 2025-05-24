@@ -62,9 +62,25 @@ The system is composed of the following tables:
 
 ---
 
+## 👩‍💻 Testes do Projeto
+
+Para este projeto, foi necessário testar as seguintes etapas essenciais para garantir o funcionamento correto do sistema bancário:
+
+- Inserção de Dados: Garantir que os dados possam ser corretamente inseridos nas tabelas do banco de dados.
+- Atualizações e Manutenções: Testar operações de atualização, modificação e exclusão de registros e estruturas.
+- Consultas SQL: Validar consultas para extrair informações relevantes dos dados armazenados.
+
+## 👨‍💻 Project Testing
+
+For this project, it was necessary to test the following key stages to ensure the proper functioning of the banking system:
+
+- Data Insertion: Ensuring data can be correctly inserted into the database tables.
+- Updates and Maintenance: Testing update, modification, and deletion operations on records and structures.
+- SQL Queries: Validating queries to extract relevant information from the stored data.
+
 ## 📝 Inserção de Dados / Data Insertion
 
-```sql
+```
 -- Banco / Bank
 INSERT INTO banco (codigo, nome) VALUES (1, 'Banco do Brasil'), (4, 'CEF');
 
@@ -98,4 +114,51 @@ INSERT INTO telefone_cliente (cpf_cli, telefone)
 VALUES 
 ('111.222.333-44', '(83)3222-1234'),
 ('666.777.888-99', '(83)99443-9999'),
-('555.444.777-33', '(83)3233-2267');
+('555.444.777-33', '(83)3233-2267');sql
+
+```
+
+## 🔄 Atualizações e Manutenções / Updates and Maintenance
+
+```
+-- Exclusão da conta 11765-2 / Delete account 11765-2
+DELETE FROM historico WHERE num_conta = '11765-2';
+DELETE FROM conta WHERE numero_conta = '11765-2';
+
+-- Atualização do número da agência / Update branch number
+UPDATE agencia SET numero_agencia = 6342 WHERE numero_agencia = 322;
+
+-- Modificações no tipo de coluna / Modify column type
+ALTER TABLE conta MODIFY numero_conta CHAR(7);
+
+-- Adição de email / Add email
+UPDATE cliente SET email = 'radegondes.silva@gmail.com' WHERE nome = 'Radegondes Silva';
+
+-- Aumento de 10% no saldo da conta 21010-7 / Increase balance by 10%
+UPDATE conta SET saldo = saldo * 1.10 WHERE numero_conta = '21010-7';
+
+-- Mudança de nome / Change client name
+UPDATE cliente SET nome = 'Bruna Fernandes' WHERE nome = 'Bruna Andrade';
+
+-- Atualização do tipo de conta / Update account type
+UPDATE conta SET tipo_conta = '3' WHERE saldo > 10000.00;
+
+```
+
+## 🔍 Consultas SQL / SQL Queries
+
+```
+-- Nome e sexo dos clientes (ordem decrescente) / Client name and gender (descending)
+SELECT nome, sexo FROM cliente ORDER BY nome DESC;
+
+-- Soma dos saldos / Sum of balances
+SELECT SUM(saldo) AS total_saldos FROM conta;
+
+-- Quantidade de clientes / Number of clients
+SELECT COUNT(*) AS clientes_cadastrados FROM cliente;
+
+-- Nome do cliente, endereço e número da conta / Client name, address and account number
+SELECT c.nome, c.endereco_cliente, h.num_conta
+FROM cliente c
+LEFT JOIN historico h ON c.cpf = h.cpf_cliente;
+```
