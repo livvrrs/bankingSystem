@@ -1,7 +1,7 @@
 
 # 💰 Sistema Bancário - Banco de Dados
 
-Este projeto implementa um sistema bancário simples utilizando MySQL para gerenciamento de dados.
+Este projeto acadêmico implementa um sistema bancário simples utilizando MySQL para gerenciamento de dados.
 
 ## Estrutura do Banco de Dados
 
@@ -33,7 +33,7 @@ O sistema é composto pelas seguintes tabelas:
 
 # 💰 Banking System - Database
 
-This project implements a simple banking system using MySQL to manage data.
+This academic project implements a simple banking system using MySQL to manage data.
 
 ## Database Structure
 
